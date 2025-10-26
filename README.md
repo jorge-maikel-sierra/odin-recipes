@@ -1,179 +1,111 @@
-# Odin Recipes 🍳
+# Odin Recipes
 
-Un proyecto open source de recetas de cocina desarrollado como parte del curriculum de [The Odin Project](https://www.theodinproject.com/). Este sitio web permite a los usuarios explorar, compartir y descubrir deliciosas recetas de todo el mundo.
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![The Odin Project](https://img.shields.io/badge/The%20Odin%20Project-F2B632?style=flat-square&logo=theodinproject&logoColor=black)](https://www.theodinproject.com/)
+[![Spanish](https://img.shields.io/badge/Language-Spanish-green?style=flat-square)](https://github.com/jorge-maikel-sierra/odin-recipes)
 
-## 📋 Tabla de Contenidos
+Una colección de recetas tradicionales españolas construida con HTML puro como parte del curriculum de [The Odin Project](https://www.theodinproject.com/). Este proyecto se enfoca en practicar HTML semántico y estructura de documentos web básicos.
 
-- [Descripción](#descripción)
-- [Características](#características)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribuciones](#contribuciones)
-- [Código de Conducta](#código-de-conducta)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
+[Características](#características) • [Cómo empezar](#cómo-empezar) • [Estructura del proyecto](#estructura-del-proyecto) • [Recetas incluidas](#recetas-incluidas)
 
-## 📖 Descripción
+## Características
 
-Odin Recipes es una aplicación web simple pero funcional que muestra una colección de recetas organizadas de manera intuitiva. El proyecto está enfocado en practicar HTML, CSS y JavaScript básico mientras se crea algo útil y divertido.
+- **HTML Semántico**: Estructura clara y accesible usando elementos HTML5 apropiados
+- **Recetas Auténticas**: Tres recetas tradicionales españolas con ingredientes y pasos detallados
+- **Navegación Simple**: Enlaces relativos entre páginas sin frameworks complejos
+- **Responsive**: Diseño que se adapta a diferentes tamaños de pantalla usando viewport meta tag
+- **Sin Dependencias**: HTML puro sin CSS frameworks o JavaScript
 
-## ✨ Características
+## Cómo empezar
 
-- 📱 Diseño responsive
-- 🔍 Búsqueda de recetas
-- 📝 Formulario para agregar nuevas recetas
-- 🏷️ Categorización por tipo de comida
-- ⭐ Sistema de valoración
-- 🖼️ Galería de imágenes
+### Prerrequisitos
 
-## 🚀 Instalación
+- Un navegador web moderno (Chrome, Firefox, Safari, Edge)
+- Ninguna instalación o dependencia adicional requerida
+
+### Ejecutar localmente
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/odin-recipes.git
+   git clone https://github.com/jorge-maikel-sierra/odin-recipes.git
    cd odin-recipes
    ```
 
-2. **Abre el archivo index.html en tu navegador:**
+2. **Abre el archivo principal:**
    ```bash
-   # En macOS
+   # macOS
    open index.html
    
-   # En Linux
+   # Linux
    xdg-open index.html
    
-   # En Windows
+   # Windows
    start index.html
    ```
 
-3. **¡Listo! El sitio debería estar funcionando localmente.**
+3. **O simplemente abre `index.html` directamente en tu navegador preferido**
 
-## 💻 Uso
+> [!TIP]
+> No necesitas un servidor web para este proyecto. Al ser HTML estático puro, funciona perfectamente abriendo los archivos directamente desde el sistema de archivos.
 
-1. Navega por las diferentes categorías de recetas
-2. Haz clic en cualquier receta para ver los detalles completos
-3. Usa la barra de búsqueda para encontrar recetas específicas
-4. Agrega tus propias recetas usando el formulario
+## Estructura del proyecto
 
-## 🤝 Contribuciones
+```
+odin-recipes/
+├── index.html              # Página principal con lista de recetas
+├── recipes/                # Directorio de recetas individuales
+│   ├── paella.html        # Receta de Paella Valenciana
+│   ├── tortilla-espanola.html  # Receta de Tortilla Española
+│   └── gazpacho.html      # Receta de Gazpacho Andaluz
+├── images/                # Imágenes de recetas (referenciadas)
+└── README.md              # Este archivo
+```
 
-¡Las contribuciones son bienvenidas! Este es un proyecto open source y valoramos cualquier tipo de ayuda.
+## Recetas incluidas
 
-### Cómo Contribuir
+- **🥘 Paella Valenciana** - El emblemático arroz español con pollo, conejo y verduras
+- **🥚 Tortilla Española** - La clásica tortilla de patatas española
+- **🍅 Gazpacho Andaluz** - La refrescante sopa fría de tomate tradicional del sur de España
 
-1. **Fork el proyecto**
-   - Haz clic en el botón "Fork" en la parte superior derecha
+Cada receta incluye:
+- Descripción cultural e histórica
+- Lista completa de ingredientes con cantidades
+- Instrucciones paso a paso detalladas
+- Consejos tradicionales de cocina
+- Navegación de vuelta a la página principal
 
-2. **Clona tu fork**
-   ```bash
-   git clone https://github.com/tu-usuario/odin-recipes.git
-   cd odin-recipes
-   ```
+## Patrones de desarrollo
 
-3. **Crea una rama para tu feature**
-   ```bash
-   git checkout -b feature/nueva-caracteristica
-   ```
+Este proyecto sigue convenciones específicas para mantener consistencia:
 
-4. **Realiza tus cambios**
-   - Sigue las convenciones de código del proyecto
-   - Agrega comentarios donde sea necesario
-   - Asegúrate de que tu código sea limpio y legible
+### Estructura HTML estándar
+- `lang="es"` para contenido en español
+- Meta viewport para diseño responsive
+- Títulos descriptivos específicos por página
 
-5. **Commit tus cambios**
-   ```bash
-   git commit -m "feat: agregar nueva característica"
-   ```
+### Organización de contenido
+```html
+<h1>Nombre de la Receta</h1>
+<img src="../images/[nombre].jpg" alt="Descripción" width="400">
+<h2>Descripción</h2>
+<h2>Ingredientes</h2>
+<h2>Pasos</h2>
+<h2>Consejos</h2>
+<a href="../index.html">Home</a>
+```
 
-6. **Push a tu rama**
-   ```bash
-   git push origin feature/nueva-caracteristica
-   ```
+### Convenciones de nombres
+- Archivos HTML en minúsculas con guiones
+- Imágenes referenciadas como `../images/[nombre].jpg`
+- Enlaces relativos para navegación
 
-7. **Abre un Pull Request**
-   - Ve a tu fork en GitHub
-   - Haz clic en "Compare & pull request"
-   - Describe tus cambios claramente
+## Acerca de The Odin Project
 
-### Tipos de Contribuciones
+Este proyecto es parte del curriculum gratuito de [The Odin Project](https://www.theodinproject.com/), una plataforma de aprendizaje open-source que enseña desarrollo web full-stack. Específicamente, forma parte de las lecciones de HTML básico en la sección de Fundamentos.
 
-- 🐛 **Reportar bugs** - Abre un issue describiendo el problema
-- 💡 **Sugerir mejoras** - Comparte tus ideas en las discussions
-- 📝 **Agregar recetas** - Contribuye con nuevas recetas
-- 🎨 **Mejorar el diseño** - Ayuda con CSS y UX
-- 📚 **Documentación** - Mejora este README o agrega comentarios
-- 🧪 **Testing** - Ayuda a encontrar y reportar problemas
-
-### Pautas para Contribuciones
-
-#### Código
-- Usa nombres descriptivos para variables y funciones
-- Mantén el código simple y legible
-- Agrega comentarios para lógica compleja
-- Sigue la estructura de carpetas existente
-
-#### Recetas
-- Incluye ingredientes completos y precisos
-- Proporciona instrucciones paso a paso claras
-- Agrega tiempo de preparación y cocción
-- Incluye una imagen representativa (libre de derechos)
-
-#### Commits
-Usa el formato de [Conventional Commits](https://www.conventionalcommits.org/):
-- `feat:` para nuevas características
-- `fix:` para corrección de bugs
-- `docs:` para cambios en documentación
-- `style:` para cambios de formato
-- `refactor:` para refactorización de código
-
-## 📋 Issues y Bug Reports
-
-Si encuentras un bug o tienes una sugerencia:
-
-1. Revisa si ya existe un issue similar
-2. Si no existe, crea uno nuevo con:
-   - Título descriptivo
-   - Descripción detallada del problema
-   - Pasos para reproducir (si es un bug)
-   - Screenshots si es relevante
-   - Tu entorno (navegador, OS, etc.)
-
-## 📜 Código de Conducta
-
-Este proyecto adhiere al [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/). Al participar, se espera que mantengas este código.
-
-### Nuestros Estándares
-
-- Usa un lenguaje inclusivo y respetuoso
-- Respeta diferentes puntos de vista
-- Acepta críticas constructivas
-- Enfócate en lo que es mejor para la comunidad
-- Muestra empatía hacia otros miembros
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
-## 👥 Colaboradores
-
-Gracias a todas las personas que han contribuido a este proyecto:
-
-<!-- ALL-CONTRIBUTORS-LIST:START -->
-<!-- Aquí se puede agregar una lista de colaboradores -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-## 📞 Contacto
-
-- **Autor:** [Tu Nombre](https://github.com/tu-usuario)
-- **Project Link:** [https://github.com/tu-usuario/odin-recipes](https://github.com/tu-usuario/odin-recipes)
-- **Live Demo:** [https://tu-usuario.github.io/odin-recipes](https://tu-usuario.github.io/odin-recipes)
-
-## 🙏 Agradecimientos
-
-- [The Odin Project](https://www.theodinproject.com/) por el curriculum
-- [Unsplash](https://unsplash.com/) por las imágenes libres de derechos
-- Todos los colaboradores que han hecho posible este proyecto
-
----
-
-⭐ ¡No olvides dar una estrella al proyecto si te resulta útil!
+### Objetivos de aprendizaje
+- Práctica de HTML semántico
+- Estructura de archivos y navegación
+- Atributos de imagen y enlaces
+- Organización de contenido con listas
+- Uso apropiado de elementos de encabezado
