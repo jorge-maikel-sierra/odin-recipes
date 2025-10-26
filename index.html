@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetas Españolas Tradicionales - Odin Recipes</title>
+    <meta name="description" content="Colección de recetas tradicionales españolas auténticas: paella valenciana, tortilla española, gazpacho y más.">
 </head>
 <body>
-    <h1>Recetas de Odin</h1>
-    <ul>
-        <li><a href="recipes/paella.html">Paella Valenciana</a></li>
-        <li><a href="recipes/tortilla-espanola.html">Tortilla Española</a></li>
-        <li><a href="recipes/gazpacho.html">Gazpacho Andaluz</a></li>
-        <li><a href="recipes/chorizo-espanol.html">Chorizo Español Casero</a></li>
-    </ul>
+    <header>
+        <h1>Recetas de Odin</h1>
+        <p>Recetas tradicionales españolas auténticas</p>
+    </header>
+    
+    <main>
+        <nav aria-label="Lista de recetas tradicionales españolas">
+            <h2>Recetas Disponibles</h2>
+            <ul role="list">
+                <li><a href="recipes/paella.html" aria-describedby="paella-desc">Paella Valenciana</a>
+                    <span id="paella-desc" class="sr-only">Receta tradicional de paella valenciana con ingredientes auténticos</span>
+                </li>
+                <li><a href="recipes/tortilla-espanola.html" aria-describedby="tortilla-desc">Tortilla Española</a>
+                    <span id="tortilla-desc" class="sr-only">Receta clásica de tortilla española de patatas</span>
+                </li>
+                <li><a href="recipes/gazpacho.html" aria-describedby="gazpacho-desc">Gazpacho Andaluz</a>
+                    <span id="gazpacho-desc" class="sr-only">Receta tradicional de gazpacho andaluz</span>
+                </li>
+                <li><a href="recipes/chorizo-espanol.html" aria-describedby="chorizo-desc">Chorizo Español Casero</a>
+                    <span id="chorizo-desc" class="sr-only">Receta para hacer chorizo español casero tradicional</span>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Proyecto educativo - <a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a></p>
+    </footer>
 </body>
 </html>
