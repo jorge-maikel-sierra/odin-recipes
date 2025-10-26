@@ -1,0 +1,148 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+      version: ${{ steps.release.outputs.version }}
+      pr: ${{ steps.release.outputs.pr }}
+
+    steps:
+      - name: Run Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          # Tipo de proyecto (simple para HTML estático)
+          release-type: simple
+          # Archivo de configuración personalizada
+          config-file: .github/release-please-config.json
+          # Archivo de manifest
+          manifest-file: .github/release-please-manifest.json
+          # Token con permisos
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Show Release Information
+        if: steps.release.outputs.release_created
+        run: |
+          echo "🎉 Nueva versión creada: ${{ steps.release.outputs.tag_name }}"
+          echo "📝 Release PR: ${{ steps.release.outputs.pr }}"
+          echo "🏷️ Version: ${{ steps.release.outputs.version }}"
+
+  # Job para notificar sobre la nueva release
+  notify-release:
+    needs: release-please
+    runs-on: ubuntu-latest
+    if: needs.release-please.outputs.release_created
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get Changelog Section
+        id: changelog
+        run: |
+          # Extraer la sección del changelog para esta versión
+          VERSION="${{ needs.release-please.outputs.version }}"
+          sed -n "/## \[${VERSION}\]/,/## \[/p" CHANGELOG.md | head -n -1 > release-notes.md
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          cat release-notes.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Update Release with Custom Notes
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const version = '${{ needs.release-please.outputs.version }}';
+            const tagName = '${{ needs.release-please.outputs.tag_name }}';
+            
+            // Obtener la release creada
+            const releases = await github.rest.repos.listReleases({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 1
+            });
+            
+            if (releases.data.length > 0) {
+              const release = releases.data[0];
+              
+              // Crear notas de release personalizadas
+              const customNotes = `
+            ## 🚀 Novedades en v${version}
+            
+            ${release.body}
+            
+            ---
+            
+            ### 📱 Para Desarrolladores
+            
+            Esta versión incluye las siguientes mejoras en el sitio de recetas españolas:
+            
+            - ✅ **Recetas actualizadas** con ingredientes tradicionales
+            - ✅ **HTML semántico** mejorado para SEO
+            - ✅ **Estructura optimizada** para navegación
+            - ✅ **Compatibilidad** con todos los navegadores modernos
+            
+            ### 🔗 Enlaces Útiles
+            
+            - 📖 [Ver el sitio web](https://jorge-maikel-sierra.github.io/odin-recipes/)
+            - 🐛 [Reportar problemas](https://github.com/${context.repo.owner}/${context.repo.repo}/issues)
+            - 💡 [Sugerir recetas](https://github.com/${context.repo.owner}/${context.repo.repo}/discussions)
+            
+            ### 🙏 Contribuidores
+            
+            Gracias a todos los que han contribuido a esta versión del proyecto de recetas españolas tradicionales.
+            
+            ---
+            
+            *Este proyecto es parte del curriculum de [The Odin Project](https://www.theodinproject.com/) enfocado en aprender HTML básico.*
+              `;
+              
+              // Actualizar la release
+              await github.rest.repos.updateRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                release_id: release.id,
+                body: customNotes
+              });
+            }
+
+  # Job para actualizar la documentación
+  update-docs:
+    needs: release-please
+    runs-on: ubuntu-latest
+    if: needs.release-please.outputs.release_created
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update README with new version
+        run: |
+          VERSION="${{ needs.release-please.outputs.version }}"
+          
+          # Actualizar badge de versión en README
+          sed -i "s/version-[^-]*-blue/version-${VERSION}-blue/g" README.md
+          
+          # Commit y push
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "docs: update version badge to ${VERSION}" || exit 0
+          git push

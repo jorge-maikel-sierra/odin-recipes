@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "component": "odin-recipes",
+      "package-name": "odin-recipes",
+      "include-v-in-tag": true,
+      "changelog-sections": [
+        {
+          "type": "feat",
+          "section": "🍽️ Nuevas Recetas",
+          "hidden": false
+        },
+        {
+          "type": "fix", 
+          "section": "🔧 Correcciones",
+          "hidden": false
+        },
+        {
+          "type": "docs",
+          "section": "📚 Documentación", 
+          "hidden": false
+        },
+        {
+          "type": "style",
+          "section": "💄 Mejoras de Estilo",
+          "hidden": false
+        },
+        {
+          "type": "refactor",
+          "section": "♻️ Refactoring",
+          "hidden": false
+        },
+        {
+          "type": "perf",
+          "section": "⚡ Optimizaciones",
+          "hidden": false
+        },
+        {
+          "type": "test",
+          "section": "🧪 Testing",
+          "hidden": true
+        },
+        {
+          "type": "build",
+          "section": "🏗️ Build",
+          "hidden": true
+        },
+        {
+          "type": "ci",
+          "section": "🔄 CI/CD",
+          "hidden": true
+        },
+        {
+          "type": "chore",
+          "section": "🧹 Mantenimiento",
+          "hidden": true
+        }
+      ],
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "README.md",
+          "jsonpath": "$.version"
+        }
+      ]
+    }
+  },
+  "plugins": [
+    {
+      "type": "generic",
+      "jsonpath": "$.version",
+      "glob": "README.md"
+    }
+  ]
+}
