@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "--base-path", "./"],
+      "env": {
+        "ALLOWED_DIRECTORIES": "recipes,images,.github,docs"
+      }
+    },
+    "web-fetch": {
+      "command": "npx", 
+      "args": ["@kazuph/mcp-fetch"]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["@kirkdeam/puppeteer-mcp-server"]
+    }
+  }
+}
