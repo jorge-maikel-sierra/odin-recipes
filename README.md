@@ -1,5 +1,7 @@
 # Odin Recipes
 
+![version](https://img.shields.io/badge/version-0.0.0-blue)
+
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![The Odin Project](https://img.shields.io/badge/The%20Odin%20Project-F2B632?style=flat-square&logo=theodinproject&logoColor=black)](https://www.theodinproject.com/)
 [![Spanish](https://img.shields.io/badge/Language-Spanish-green?style=flat-square)](https://github.com/jorge-maikel-sierra/odin-recipes)
