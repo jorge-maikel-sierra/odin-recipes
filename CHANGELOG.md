@@ -1,4 +1,40 @@
-# 📝 Changelog - Recetas Españolas Tradicionales
+# Changelog
+
+## 1.0.0 (2025-10-27)
+
+
+### 🍽️ Nuevas Recetas
+
+* **chatmodes:** añade modos de chat personalizados para desarrollo especializado ([73c69cb](https://github.com/jorge-maikel-sierra/odin-recipes/commit/73c69cb6638ff30cf56cee2e06b1ee9b57196911))
+* **mcp:** add Model Context Protocol server configuration ([5bec279](https://github.com/jorge-maikel-sierra/odin-recipes/commit/5bec2790088b66168a53ecc262bb20f1f2efd7e1))
+* **navegación:** añadir enlace a la receta ([adf5630](https://github.com/jorge-maikel-sierra/odin-recipes/commit/adf5630f0733732b01bd5255ceedfc9bd350f4a7))
+* **prompts:** configura archivos de solicitud para VS Code ([ef34449](https://github.com/jorge-maikel-sierra/odin-recipes/commit/ef3444998253ed6c26d40c0c622f10a9dd0cbb7f))
+* **recetas:** añadir dos nuevas recetas españolas ([9e90531](https://github.com/jorge-maikel-sierra/odin-recipes/commit/9e90531c216d36aa054ca27373867a59a9ec34ca))
+* **recetas:** añadir página con receta de paella valenciana. ([b8dd444](https://github.com/jorge-maikel-sierra/odin-recipes/commit/b8dd444746c22ac7690591c844c79f5f33052a15))
+* **recipes:** añade receta de chorizo español casero ([ef34449](https://github.com/jorge-maikel-sierra/odin-recipes/commit/ef3444998253ed6c26d40c0c622f10a9dd0cbb7f))
+* **seo:** mejora SEO y accesibilidad en páginas principales ([51fc0ca](https://github.com/jorge-maikel-sierra/odin-recipes/commit/51fc0ca34784ab04c2caf0ec92e6d260d5cd1e2f))
+* **structure:** mejora semántica HTML5 y accesibilidad de página principal ([dad2d45](https://github.com/jorge-maikel-sierra/odin-recipes/commit/dad2d45c0e4345b05c6371e94ac41188c8b43119))
+* **structure:** mejora semántica HTML5 y accesibilidad en todas las recetas ([79f0a1f](https://github.com/jorge-maikel-sierra/odin-recipes/commit/79f0a1f82aacd4621dd3e8e104db28eab136bce6))
+* **tooling:** implementar sistema completo de release management ([a2e4870](https://github.com/jorge-maikel-sierra/odin-recipes/commit/a2e48702efc6dcddbd16226047b0ca02e5c75475))
+
+
+### 🔧 Correcciones
+
+* **release:** remove unsupported generic plugins and extra-files from config ([79edbaf](https://github.com/jorge-maikel-sierra/odin-recipes/commit/79edbafd940635d139284c5f4ee3fc9517a0269c))
+
+
+### 📚 Documentación
+
+* añade ejemplo completo de meta tags para recetas ([a4903a6](https://github.com/jorge-maikel-sierra/odin-recipes/commit/a4903a6a3fb3c2d870bc168a2cdef0b68b1112b6))
+* añadir un README completo con directrices para contribuir ([3c2b2fe](https://github.com/jorge-maikel-sierra/odin-recipes/commit/3c2b2febccf8310cdbb5feac11bfb96359183292))
+* **readme:** add version badge placeholder for Release Please ([5eab91a](https://github.com/jorge-maikel-sierra/odin-recipes/commit/5eab91a37946a51c6f72bcfa711c1d0fd68e9f6d))
+
+
+### 🧹 Mantenimiento
+
+* **release:** prepare v1.0.0 ([28dd31b](https://github.com/jorge-maikel-sierra/odin-recipes/commit/28dd31b485ba95df11080a66addd79ef6b4de182))
+
+## 📝 Changelog - Recetas Españolas Tradicionales
 
 > **Todas las mejoras y nuevas recetas de este proyecto están documentadas en este archivo.**
 > 
@@ -72,15 +108,15 @@
 
 ### 📝 **Formato de Commits**
 ```bash
-# Nuevas recetas
+## Nuevas recetas
 feat: añadir receta de [nombre de la receta]
 feat(recetas): agregar [plato] tradicional de [región]
 
-# Correcciones
+## Correcciones
 fix: corregir ingredientes de [receta]
 fix([receta]): actualizar [aspecto específico]
 
-# Documentación
+## Documentación
 docs: actualizar README con [contenido]
 docs(contributing): añadir guía para [proceso]
 ```
