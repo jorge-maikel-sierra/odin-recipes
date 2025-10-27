@@ -58,21 +58,8 @@
           "section": "🧹 Mantenimiento",
           "hidden": true
         }
-      ],
-      "extra-files": [
-        {
-          "type": "generic",
-          "path": "README.md",
-          "jsonpath": "$.version"
-        }
       ]
     }
   },
-  "plugins": [
-    {
-      "type": "generic",
-      "jsonpath": "$.version",
-      "glob": "README.md"
-    }
-  ]
+  "plugins": []
 }
