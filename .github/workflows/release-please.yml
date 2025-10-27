@@ -24,8 +24,6 @@ jobs:
         id: release
         uses: googleapis/release-please-action@v4
         with:
-          # Tipo de proyecto (simple para HTML estático)
-          release-type: simple
           # Archivo de configuración personalizada
           config-file: .github/release-please-config.json
           # Archivo de manifest
