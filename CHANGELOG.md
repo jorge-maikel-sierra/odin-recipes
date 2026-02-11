@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/jorge-maikel-sierra/odin-recipes/compare/odin-recipes-v1.0.0...odin-recipes-v1.1.0) (2026-02-11)
+
+
+### 🍽️ Nuevas Recetas
+
+* implementar diseño con paleta de colores cálida y terrosa ([78138a9](https://github.com/jorge-maikel-sierra/odin-recipes/commit/78138a92a5aac5c64cd320906e9c15204c8cc198))
+
+
+### 📚 Documentación
+
+* update version badge to 1.0.0 ([1633eb7](https://github.com/jorge-maikel-sierra/odin-recipes/commit/1633eb705b415172ade3fdd277f1e011fa350e90))
+
 ## 1.0.0 (2025-10-27)
 
 
