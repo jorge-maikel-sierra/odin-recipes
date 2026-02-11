@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gazpacho Andaluz - Odin Recipes</title>
     <meta name="description" content="Receta tradicional de gazpacho andaluz. Sopa fría de tomate con verduras frescas perfecta para el verano. Técnica auténtica paso a paso.">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <div class="container">
     <header>
         <nav aria-label="Navegación principal">
-            <a href="../index.html" aria-label="Volver a la página principal de recetas">← Volver a Recetas</a>
+            <a href="../index.html" class="nav-link" aria-label="Volver a la página principal de recetas">← Volver a Recetas</a>
         </nav>
     </header>
 
@@ -18,13 +22,18 @@
             <header>
                 <h1 itemprop="name">Gazpacho Andaluz</h1>
                 <figure>
-                    <img itemprop="image" src="../images/gazpacho.jpg" alt="Gazpacho andaluz tradicional servido frío con guarniciones de verduras" width="400">
+                    <img itemprop="image" 
+                         src="https://images.unsplash.com/photo-1580217593608-61931cefc821?w=400&h=300&fit=crop" 
+                         alt="Gazpacho andaluz tradicional servido frío con guarniciones de verduras" 
+                         width="400"
+                         height="300"
+                         loading="lazy">
                 </figure>
             </header>
     
             <section aria-labelledby="description-heading">
                 <h2 id="description-heading">Descripción</h2>
-                <div itemprop="description">
+                <div itemprop="description" class="description">
                     <p>El gazpacho andaluz es una sopa fría tradicional del sur de España, perfecta para los días calurosos de verano. Esta refrescante preparación se basa en verduras crudas como tomates maduros, pepino, pimiento, cebolla y ajo, todo ello triturado con pan, aceite de oliva y vinagre hasta conseguir una textura cremosa y sedosa.</p>
                     
                     <p>Originario de Andalucía, el gazpacho es mucho más que una simple sopa: es una explosión de sabores mediterráneos que aporta vitaminas, minerales y antioxidantes. La clave está en usar ingredientes de la mejor calidad y encontrar el equilibrio perfecto entre acidez, dulzor y frescura.</p>
@@ -119,8 +128,9 @@
 
     <footer>
         <nav aria-label="Navegación de retorno">
-            <a href="../index.html" aria-label="Volver a la página principal de recetas">Home</a>
+            <a href="../index.html" class="nav-link" aria-label="Volver a la página principal de recetas">Home</a>
         </nav>
     </footer>
+    </div>
 </body>
 </html>

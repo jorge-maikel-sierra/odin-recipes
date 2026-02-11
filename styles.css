@@ -1,0 +1,337 @@
+/* ========================================
+   PALETA DE COLORES - RECETAS ESPAÑOLAS
+   Inspirada en tonos cálidos y terrosos
+   ======================================== */
+
+:root {
+  /* Color Principal - Naranja Terracota */
+  --primary-lighter: #F4A261;
+  --primary-light: #E8845F;
+  --primary: #D9653B;
+  --primary-dark: #C44E2A;
+  --primary-darker: #A63F22;
+
+  /* Color Secundario - Amarillo Dorado */
+  --secondary-lighter: #FFE4A3;
+  --secondary-light: #FFD87F;
+  --secondary: #F4C430;
+  --secondary-dark: #D9A91A;
+  --secondary-darker: #B8900F;
+
+  /* Color Acento - Verde Oliva */
+  --accent-lighter: #B8C89F;
+  --accent-light: #9FB584;
+  --accent: #7A9B57;
+  --accent-dark: #5F7A41;
+  --accent-darker: #475A30;
+
+  /* Color de Fondo - Crema */
+  --bg-lightest: #FFFFFF;
+  --bg-lighter: #FDF8F3;
+  --bg-light: #F5EBE0;
+  --bg: #EDDFCC;
+  --bg-dark: #E5D4BB;
+  --bg-darker: #D9C4A8;
+
+  /* Color de Sombra - Marrón Oscuro */
+  --shadow-light: #8B6F5E;
+  --shadow: #5E3A2A;
+  --shadow-dark: #4A2E21;
+  --shadow-darker: #361F17;
+
+  /* Color de Texto */
+  --text-light: #5E3A2A;
+  --text: #2E1A12;
+  --text-dark: #1A0F09;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Bordes */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 4px rgba(94, 58, 42, 0.1);
+  --shadow-md: 0 4px 8px rgba(94, 58, 42, 0.15);
+  --shadow-lg: 0 8px 16px rgba(94, 58, 42, 0.2);
+}
+
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: var(--bg-light);
+  color: var(--text);
+  line-height: 1.6;
+  padding: var(--spacing-md);
+}
+
+/* ========================================
+   ENCABEZADOS
+   ======================================== */
+
+h1 {
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(94, 58, 42, 0.1);
+}
+
+h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--secondary);
+  padding-bottom: var(--spacing-xs);
+}
+
+h3 {
+  color: var(--accent-dark);
+  font-size: 1.3rem;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ========================================
+   HEADER Y NAVEGACIÓN
+   ======================================== */
+
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--bg-lightest);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+header h1 {
+  color: var(--bg-lightest);
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+header p {
+  color: var(--bg-light);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ========================================
+   TARJETAS DE RECETAS
+   ======================================== */
+
+.recipe-card {
+  background-color: var(--bg);
+  border: 2px solid var(--secondary-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   LISTAS
+   ======================================== */
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: var(--bg);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--border-radius-sm);
+}
+
+ul li::before {
+  content: "🍽️ ";
+  margin-right: var(--spacing-xs);
+}
+
+ol {
+  padding-left: var(--spacing-md);
+  counter-reset: step-counter;
+  list-style: none;
+}
+
+ol li {
+  background-color: var(--bg);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--border-radius-sm);
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 3.5rem;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+ol li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary);
+  color: var(--bg-lightest);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+ol li strong {
+  color: var(--primary-dark);
+}
+
+/* ========================================
+   IMÁGENES
+   ======================================== */
+
+img {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  display: block;
+  margin: var(--spacing-lg) auto;
+  max-width: 100%;
+  height: auto;
+  border: 4px solid var(--secondary-light);
+}
+
+/* ========================================
+   ENLACES
+   ======================================== */
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Enlaces de navegación especiales */
+.nav-link {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--bg-lightest);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin: var(--spacing-xs);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--accent-dark);
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+/* ========================================
+   SECCIONES DE CONTENIDO
+   ======================================== */
+
+.recipe-section {
+  background-color: var(--bg-lighter);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.tips {
+  background-color: var(--secondary-lighter);
+  border-left: 5px solid var(--secondary-dark);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  margin-top: var(--spacing-md);
+}
+
+.tips::before {
+  content: "💡 ";
+  font-size: 1.5rem;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--bg-lightest);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-sm);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  header {
+    padding: var(--spacing-md);
+  }
+}
